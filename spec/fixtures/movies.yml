@@ -18,3 +18,17 @@ mov3:
   rating: R
   director: DirUno
   release_date: 2008-11-11
+
+mov4:
+  id: 8
+  title: Cuatro
+  rating: R
+  director:
+  release_date: 2008-11-12
+
+mov5:
+  id: 9
+  title: Cinco
+  rating: R
+  director:
+  release_date: 2008-12-11

@@ -12,7 +12,10 @@ describe Movie do
       movie2.destroy
       movie3.destroy
     end
-    it 'should do something when no director is defined' do
+    it 'should return [] when no director is defined' do
+      movie1 = movies(:mov4)
+      Movie.search_same_director('8').should == []
+      movie1.destroy
     end   
  end
 end

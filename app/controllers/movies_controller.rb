@@ -4,7 +4,13 @@ class MoviesController < ApplicationController
 #    movie = Movie.find(params[:id])
 #    @movies = Movie.find_all_by_director(movie.director)
    @movies = Movie.search_same_director(params[:id])
-  end
+   if @movies == []
+  text=Movie.find_by_id(params[:id]).title
+    flash[:notice]="'#{text}' has no director info"
+#     flash[:warning] = "chupala"
+     redirect_to(movies_path) and return
+   end
+ end
 
   def show
     id = params[:id] # retrieve movie ID from URI route
@@ -25,12 +31,14 @@ class MoviesController < ApplicationController
 
     if params[:sort] != session[:sort]
       session[:sort] = sort
+      flash[:notice] = flash[:notice] ; flash[:warning] = flash[:warning]
       redirect_to :sort => sort, :ratings => @selected_ratings and return
     end
 
     if params[:ratings] != session[:ratings] and @selected_ratings != {}
       session[:sort] = sort
       session[:ratings] = @selected_ratings
+      flash[:notice] = flash[:notice] ; flash[:warning] = flash[:warning]
       redirect_to :sort => sort, :ratings => @selected_ratings and return
     end
     @movies = Movie.find_all_by_rating(@selected_ratings.keys, ordering)
