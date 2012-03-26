@@ -18,6 +18,9 @@ module NavigationHelpers
 
     when /^the edit page for "Alien"$/
       '/movies/3/edit'
+
+    when /^the details page for "Star Wars"$/
+      '/movies/1'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

@@ -7,3 +7,6 @@ end
 Then /the director of "(.*)" should be "(.*)"$/ do |movie, director|
   assert (page.body.to_s =~ /#{director}/)
 end
+
+#Given /^I am on the details page for "(.*)"$/ do |movie|
+#end
