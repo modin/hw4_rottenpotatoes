@@ -1,0 +1,20 @@
+mov1:
+  id: 5
+  title: Uno
+  rating: R
+  director: DirUno
+  release_date: 2008-11-26
+
+mov2:
+  id: 6
+  title: Dos
+  rating: R
+  director: DirDos
+  release_date: 2008-11-12
+
+mov3:
+  id: 7
+  title: Tres
+  rating: R
+  director: DirUno
+  release_date: 2008-11-11

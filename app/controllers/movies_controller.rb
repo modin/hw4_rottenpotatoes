@@ -1,7 +1,9 @@
 class MoviesController < ApplicationController
 
   def find_same_director
-    @movies = Movie.search_same_director(params[:id])
+#    movie = Movie.find(params[:id])
+#    @movies = Movie.find_all_by_director(movie.director)
+   @movies = Movie.search_same_director(params[:id])
   end
 
   def show

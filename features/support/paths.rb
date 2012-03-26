@@ -15,12 +15,23 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-
+   
+#    when /^the edit page for "(.*)"$/ do |page|
+#      id=Movie.find_by_title(page).id
+#      '/movies/'.concat(id.to_s).concat('/edit')
     when /^the edit page for "Alien"$/
-      '/movies/3/edit'
+     '/movies/'.concat(Movie.find_by_title("Alien").id.to_s).concat('/edit')
 
     when /^the details page for "Star Wars"$/
-      '/movies/1'
+      '/movies/'.concat(Movie.find_by_title("Star Wars").id.to_s)
+
+    when /^the Similar Movies page for "Star Wars"$/
+      '/movies/'.concat(Movie.find_by_title("Star Wars").id.to_s).concat('/find')
+#     '/movies/1/find'
+
+    when /^the details page for "Alien"$/
+     '/movies/'.concat(Movie.find_by_title("Alien").id.to_s)
+# '/movies/3'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
